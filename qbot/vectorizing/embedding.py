@@ -38,11 +38,11 @@ encode_kwargs = {'normalize_embeddings': False}
 model_name="sentence-transformers/all-MiniLM-L6-v2"
 embeddings = HuggingFaceEmbeddings(model_name=model_name,model_kwargs=model_kwargs,encode_kwargs=encode_kwargs)
 
-if os.path.exists("/Users/varshinis/qbot/vectorizing/chroma_path"):
-    shutil.rmtree("/Users/varshinis/qbot/vectorizing/chroma_path")
+if os.path.exists("vectorizing/chroma_path"):
+    shutil.rmtree("vectorizing/chroma_path")
 
 # Initialize and populate ChromaDB
-vectorstore = Chroma.from_texts(documents, embeddings, metadatas=metadata, persist_directory="/Users/varshinis/qbot/vectorizing/chroma_path")
+vectorstore = Chroma.from_texts(documents, embeddings, metadatas=metadata, persist_directory="vectorizing/chroma_path")
 
 #Initializing MobileBERT and tokenizer
 model_name="google/mobilebert-uncased"
