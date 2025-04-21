@@ -65,7 +65,7 @@ prompt_= PromptTemplate(template=template_,input_variables=["context", "question
 OpenAi based Retrival QA - But works only if you pay :(
 
 """
-api_key=os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 def retrieve_and_answer(query):
